@@ -8,18 +8,17 @@ repositories {
 
 dependencies {
     implementation group: 'com.example.utils', name: 'utils', version: '1.3.5' // Replace with the actual groupId, artifactId, and version
-    // Add any other dependencies your "demo" module requires
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_19 // Update to Java 19 if needed
+    sourceCompatibility = JavaVersion.VERSION_17 // Update to Java 19 if needed
 }
 
 jar {
     manifest {
         attributes(
                 'Implementation-Title': 'Demo Application',
-                'Implementation-Version': '1.0.0' // Replace with your desired version
+                'Implementation-Version': '1.0.0'
         )
     }
 }
