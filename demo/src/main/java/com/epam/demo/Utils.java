@@ -1,19 +1,15 @@
 package com.epam.demo;
-
+import com.epam.utils.StringUtils;
 import java.util.List;
 
 public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
-        for (String arg : args) {
-            try {
-                int num = Integer.parseInt(arg);
-                if (num <= 0) {
-                    return false;
-                }
-            } catch (NumberFormatException e) {
-                return false;
-            }
-        }
-        return true;
+        if(args.isEmpty()){ return false; }
+        return args.stream().allMatch(StringUtils::isPositiveNumber);
     }
+
+    public static void main(String[] args) {
+        System.out.println(Utils.isAllPositiveNumbers(List.of("1", "-3", "6", "8")));
+    }
+
 }
